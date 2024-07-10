@@ -9,6 +9,12 @@
       [markup.goldmark.parser.attribute]
         block = true
         title = true
+      [markup.goldmark.extensions]
+        [markup.goldmark.extensions.passthrough]
+          enable = true
+          [markup.goldmark.extensions.passthrough.delimiters]
+            block = [['\[', '\]'], ['$$', '$$']]
+            inline = [['\(', '\)']]
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
@@ -24,12 +30,16 @@
     style = 'rrt'
     tabWidth = 4
   [markup.tableOfContents]
-    startLevel = 2
+    startLevel = 1
     endLevel = 3
-    ordered = false
+    ordered = true
 
 [params]
+  mathjax = true
   [params.theme_config]
     appearance = "auto"
     back_home_text = ".."
     date_format = "2006-01-02"
+
+
+  

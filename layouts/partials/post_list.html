@@ -25,10 +25,10 @@
     {{- if .limit }}
         {{ $posts = (first .limit $posts ) }}
     {{ end }}
-    <ul>
+    <ul style="list-style-type: circle; color: rgb(84, 84, 84);">
         {{- range $post := $posts -}}
         <li>
-            <span>{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>
+            <span style = "color:rgb(84, 84, 84)">{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>
             <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
         </li>
         {{ end }}
@@ -36,4 +36,5 @@
             <li><a href="{{ .show_more_url | relURL }}">{{ .show_more_text | default "Show more..." }}</a></li>
         {{ end }}
     </ul>
+
 {{ end }}

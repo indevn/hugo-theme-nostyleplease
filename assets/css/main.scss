@@ -5,15 +5,21 @@
   color: $--primary-text-color;
 
   a {
-    color: $--link-color;
+    color: $--primary-text-color;
+
     text-decoration: none;
 
-    &:visited { color: $--visited-link-color; }
-    &:hover { text-decoration: underline; }
+    // &:visited { color: $--primary-text-color; }
+    &:hover { 
+      color: #26267D;//$--visited-link-color;
+      text-decoration: underline --secondary-text-color; 
+      text-decoration-thickness: 2px;
+    }
   }
 
+
   code:not(pre > code) {
-    background-color: $--primary-text-color;
+    background-color: #26267D;//$--primary-text-color;
     color: $--bg-color;
   }
 
@@ -21,11 +27,11 @@
 }
 
 @mixin dark-appearance {
-  @include theme(#212121, #fafafa, #eeeeee, #0071bc, #a359e9);
+  @include theme(#212121, #fafafa, #eeeeee, #005994, #39006e);
 }
 
 @mixin light-appearance {
-  @include theme(#ffffff, #212121, #666666, #1e70bf, #921292);
+  @include theme(#ffffff, #212121, #666666, #005a96, #6d006d);
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -45,13 +51,15 @@ body[a="light"] { @include light-appearance; }
 html { height: 100%; }
 
 body {
-  font-family: monospace;
+  font-family: "Noto Serif SC", serif;
   font-size: 16px;
   line-height: 1.4;
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
 }
+
+
 
 .post-meta { text-align: right; }
 
